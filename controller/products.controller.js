@@ -72,7 +72,7 @@ const saveProduct = async(req, res) => {
             }
         }
     } else {
-        res.status(400).json({message: 'Usted necesita permisos de administrador para continuar.'});
+        res.status(400).json({message: 'necesita permisos de administrador para continuar.'});
     }
 }
 
@@ -113,7 +113,7 @@ const updateProductById = async(req, res) => {
             }
         }
     } else {
-        res.status(400).json({message: 'Usted necesita permisos de administrador para continuar.'})
+        res.status(400).json({message: 'necesita permisos de administrador para continuar.'})
     }
 }
 
@@ -136,7 +136,7 @@ const deleteProductById = async(req, res) => {
             console.error(`Error: ${error}`)
         }
     } else {
-        res.status(400).json({message: 'Usted necesita permisos de administrador para continuar.'})
+        res.status(400).json({message: 'necesita permisos de administrador para continuar.'})
     }
 }
 

@@ -94,16 +94,16 @@ const saveProductByID = async (req, res) => {
         const cartIndex = dataDataCart.findIndex(cart => cart.id == id)
         if(cartIndex != -1){
             const dataDataProducts = await readFile(dataProducts)
-            const dataProducts = []
+            const data1Products = []
             dataDataProducts.forEach(product => {
                 arrayProductsIds.forEach(id => {
                     if(product.id == id){
-                        dataProducts.push(product)
+                        data1Products.push(product)
                     }
                 })
             })
-            if(dataProducts.length != 0){
-                let concatData = dataDataCart[cartIndex].products.concat(dataProducts)
+            if(data1Products.length != 0){
+                let concatData = dataDataCart[cartIndex].products.concat(data1Products)
                 dataDataCart[cartIndex].products = concatData
                 await fs.promises.writeFile(dataCart, JSON.stringify(dataDataCart, null, 2), err => {
                     if(err) throw err
@@ -123,7 +123,7 @@ const saveProductByID = async (req, res) => {
  const deleteCartProductByID = async(req, res) => {
     const {id, id_producto} = req.params 
     try {
-        const dataDataCart = await readFile(databaseCart)
+        const dataDataCart = await readFile(dataCart)
         const cartData = dataDataCart.find(cart => cart.id == id)
         if(cartData){
             const productIndex = cartData.products.findIndex(product => product.id == id_producto)
