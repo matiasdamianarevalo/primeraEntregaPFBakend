@@ -13,6 +13,6 @@ import cartsRouter from "./routes/carts.router.js";
 app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
 
-app.listen(8081,()=>{
-    console.log("escuchando al puerto 8081")
+app.listen(8080,()=>{
+    console.log("escuchando al puerto 8080")
 })
