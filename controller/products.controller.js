@@ -53,8 +53,8 @@ const getProductById = async(req, res) => {
 
 const saveProduct = async(req, res) => {
     if(administrador == true){
-        const {title, price, image, description, code, stock} = req.body
-        if(!title|| !price || !image || !description || !code || !stock){
+        const {title, price, thumbnail, description, code, stock} = req.body
+        if(!title|| !price || !thumbnail || !description || !code || !stock){
             res.status(400).json({error: 'Por favor ingrese todos los datos'})
         } else {
             const product = req.body
@@ -79,9 +79,9 @@ const saveProduct = async(req, res) => {
 const updateProductById = async(req, res) => {
     if(administrador == true){
         const {id} = req.params
-        const {title, price, image, description, code, stock} = req.body
+        const {title, price, thumbnail, description, code, stock} = req.body
 
-        if(!title||!price||!image||!description||!code||!stock){
+        if(!title||!price||!thumbnail||!description||!code||!stock){
             res.status(400).json({error: 'Por favor ingrese todos los datos'})
         } else {
             try {
@@ -91,7 +91,7 @@ const updateProductById = async(req, res) => {
                     if(dataData[index].id == id){
                         dataData[index].title = title
                         dataData[index].price = price
-                        dataData[index].image = image
+                        dataData[index].thumbnail = thumbnail
                         dataData[index].description = description
                         dataData[index].code = code
                         dataData[index].stock = stock

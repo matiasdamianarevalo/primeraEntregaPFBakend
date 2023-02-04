@@ -1,4 +1,5 @@
-[  {
+[
+  {
     "id": 1,
     "title": "product1",
     "description": "descri",
@@ -87,5 +88,15 @@
     "thumbnail": "../image/10.jpg",
     "code": 1010,
     "stock": 2
+  },
+  {
+    "title": "product11",
+    "description": "descri",
+    "price": 900,
+    "thumbnail": "../image/4.jpg",
+    "code": 1113,
+    "stock": 2,
+    "id": 11,
+    "timestamp": 1675395840541
   }
 ]
